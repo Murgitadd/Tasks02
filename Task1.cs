@@ -1,10 +1,22 @@
-Console.WriteLine("Enter a four-digit number:");
-
+Console.WriteLine("Enter a number");
 int num = int.Parse(Console.ReadLine());
+bool isPowerOfTwo = true;
 
-int minlik = num / 1000;
-int yuzluk = (num % 1000) / 100;
-int onluq = (num % 100) / 10;
-int teklik = (num % 10);
+if (num <= 0)
+{
+    isPowerOfTwo = false;
+}
+else
+{
+    while (num > 1)
+    {
+        if (num % 2 != 0)
+        {
+            isPowerOfTwo = false;
+            break;
+        }
+        num /= 2;
+    }
+}
 
-Console.WriteLine(minlik+yuzluk+onluq+teklik);
+Console.WriteLine(isPowerOfTwo);
