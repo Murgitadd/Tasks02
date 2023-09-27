@@ -1,16 +1,29 @@
-Console.WriteLine("Enter a three-digit number:");
+Console.WriteLine("Enter a number");
+int N = int.Parse(Console.ReadLine());
+Console.WriteLine("Enter a digit");
+int digit = int.Parse(Console.ReadLine());
 
-int num = int.Parse(Console.ReadLine());
+int onluq;
+int teklik;
+int count = 0;
 
-int yuzluk = (num % 1000) / 100;
-int onluq = (num % 100) / 10;
-int teklik = (num % 10);
-
-if (yuzluk == onluq && onluq == teklik)
+for (int i = 1; i <= N; i++)
 {
-    Console.WriteLine("Butun ededler eynidir.");
+    if (i > 9)
+    {
+        onluq = i / 10;
+        teklik = i % 10;
+    }
+    else
+    {
+        onluq = 0;
+        teklik = i;
+    }
+
+    if (onluq == digit || teklik == digit)
+    {
+        count++;
+    }
 }
-else
-{
-    Console.WriteLine("Eyni olmayan ededler var!");
-}
+
+Console.WriteLine(count);
