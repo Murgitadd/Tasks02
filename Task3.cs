@@ -1,7 +1,19 @@
-Console.WriteLine("Enter a:");
-int a = int.Parse(Console.ReadLine());
-Console.WriteLine("Enter b:");
-int b = int.Parse(Console.ReadLine());
+Console.WriteLine("Enter a number");
+int num = int.Parse(Console.ReadLine());
+bool isPerfect = false;
+int sum = 0;
 
-Console.WriteLine($"a={a+1}");
-Console.WriteLine($"b={b-1}");
+for (int i = 1; i < num; i++)
+{
+    if (num % i == 0)
+    {
+        sum += i;
+    }
+}
+
+if (sum == num)
+{
+    isPerfect = true;
+}
+
+Console.WriteLine(isPerfect);
