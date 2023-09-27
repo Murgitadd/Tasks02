@@ -1,24 +1,23 @@
-Console.WriteLine("Enter your age:");
-byte age = byte.Parse(Console.ReadLine());
+Console.WriteLine("Enter a decimal number:");
+int dec = int.Parse(Console.ReadLine());
 
-if (age <= 12 || age >= 60)
+convert(dec);
+
+string convert(int dec)
 {
-    Console.WriteLine($"ticket = 5AZN");
-}
- else if (age >= 13 && age <=59)
-{
-    Console.WriteLine("Are you a student (true/false)?");
-    bool isStudent = bool.Parse(Console.ReadLine());
-    if (isStudent == true)
+    if (dec == 0)
     {
-        Console.WriteLine($"ticket = 7.5AZN");
+        Console.WriteLine(0);
     }
-    else
+    
+    string bin = "";
+    
+    while (dec > 0)
     {
-        Console.WriteLine($"ticket = 10AZN");
+        int remainder = dec % 2;
+        bin = remainder + bin;
+        dec /= 2;
     }
-}
-else
-{
-    Console.WriteLine("Please Enter Right Informations...");
+    
+    Console.WriteLine(bin);
 }
